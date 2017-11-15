@@ -1,6 +1,5 @@
 package com.sercet.controller;
 
-import com.sercet.common.base.LoginSessionMap;
 import com.sercet.service.LoginService;
 import com.sercet.common.base.BaseController;
 import com.sercet.vo.PBUser;
@@ -18,7 +17,7 @@ import java.util.Map;
 public class LoginController extends BaseController{
     @Autowired
     LoginService loginService;
-    private Map Instance = LoginSessionMap.getInstance();
+
     @RequestMapping("login")
     public ModelAndView login(PBUser pbUser){
         ModelAndView mv = new ModelAndView();
@@ -26,7 +25,7 @@ public class LoginController extends BaseController{
         if (message.equals("ok")){
             mv.setViewName("index");
             this.session.setAttribute("user",pbUser);
-            Instance.put(pbUser.getUserId(),this.session.getId());
+
             return mv;
         }
         mv.setViewName("login");

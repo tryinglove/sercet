@@ -7,6 +7,8 @@ import com.sercet.vo.ConfigMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by john on 2017/11/13.
  */
@@ -25,5 +27,15 @@ public class ConfigServiceImpl implements IConfigService {
         configInfo.setCiCmId(messageId);
         configDao.addConfigInfo(configInfo);
         return "SUCCESS";
+    }
+
+    @Override
+    public List<ConfigMessage> getAllConfigMessage() {
+        return configDao.getAllMessage();
+    }
+
+    @Override
+    public List<ConfigInfo> getInfoByMessageID(int messageId) {
+        return configDao.getInfoByMessageID(messageId);
     }
 }

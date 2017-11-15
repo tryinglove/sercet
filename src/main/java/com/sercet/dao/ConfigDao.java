@@ -17,5 +17,5 @@ public interface ConfigDao {
 
     List<ConfigMessage> getAllMessage();
 
-    List<ConfigInfo> getInfoByMessageID(@Param("id") String messageId);
+    List<ConfigInfo> getInfoByMessageID(@Param("id") int messageId);
 }

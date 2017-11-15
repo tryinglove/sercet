@@ -22,7 +22,7 @@ public class ServiceLogAOP {
         for (int i = 0;i < a.length;i++){
             args = args.append(a[i].toString());
         }
-        logger.info("进入"+joinpoint.getThis().getClass().getName().toString()+"执行"+joinpoint.getSignature().getName()+args.toString());
+        logger.info("进入"+joinpoint.getThis().getClass().getSimpleName()+"执行"+joinpoint.getSignature().getName()+args.toString());
     }
     @After("execution(* com.sercet.service.*.*(..))")
     public void after(JoinPoint joinPoint){
@@ -31,7 +31,7 @@ public class ServiceLogAOP {
         for (int i = 0;i < a.length;i++){
             args = args.append(a[i].toString());
         }
-        logger.info(joinPoint.getThis().getClass().getName().toString()+"执行"+joinPoint.getSignature().getName()+args.toString());
+        logger.info(joinPoint.getThis().getClass().getSimpleName()+"执行"+joinPoint.getSignature().getName()+args.toString());
     }
 
 }

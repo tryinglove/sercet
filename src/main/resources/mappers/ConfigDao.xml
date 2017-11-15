@@ -12,7 +12,7 @@
     <select id="getAllMessage" resultType="com.sercet.vo.ConfigMessage">
         select * FROM configMessage;
     </select>
-    <select id="getInfoByMessageID" parameterType="java.lang.String" resultType="com.sercet.vo.ConfigInfo">
+    <select id="getInfoByMessageID"  resultType="com.sercet.vo.ConfigInfo">
         select * from configInfo t WHERE t.ci_cm_id = #{id}
     </select>
 </mapper>

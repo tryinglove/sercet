@@ -3,9 +3,7 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          id="WebApp_ID" version="3.0">
     <display-name>AccountManager</display-name>
-    <listener>
-        <listener-class>com.sercet.common.base.SessionListener</listener-class>
-    </listener>
+
     <servlet>
         <servlet-name>mvc-dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -19,14 +17,8 @@
         <!-- 默认匹配所有的请求 -->
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-    <filter>
-        <filter-name>LoginFilter</filter-name>
-        <filter-class>com.sercet.common.base.IsLoginFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>LoginFilter</filter-name>
-        <url-pattern>/</url-pattern>
-    </filter-mapping>
+
+
    <welcome-file-list>
        <welcome-file>/</welcome-file>
    </welcome-file-list>
